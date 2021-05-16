@@ -31,7 +31,7 @@ jobs:
         with:
           version: 12
       - name: action-yarn
-        uses: comchangs/action-yarn@v0.1-beta
+        uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: install
 
