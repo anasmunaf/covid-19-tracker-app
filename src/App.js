@@ -1,13 +1,19 @@
 /** @format */
 
-import logo from "./logo.svg";
 import "./App.css";
-
+import Cards from "./components/cards/card";
+import Chart from "./components/charts/chart";
+import Countries from "./components/countries/counrties";
+import { GlobalProvider } from "./context/globalState";
 function App() {
   return (
-    <div className='App'>
-      <h1>Hello World...</h1>
-    </div>
+    <GlobalProvider>
+      <div>
+        <Cards />
+        <Countries />
+        <Chart />
+      </div>
+    </GlobalProvider>
   );
 }
 
