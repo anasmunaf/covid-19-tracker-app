@@ -27,7 +27,7 @@ const Countries = () => {
       <FormControl className={classes.formControl}>
         <InputLabel>Countries</InputLabel>
         <NativeSelect onChange={(e) => handleChange(e.target.value)}>
-          <option aria-label='None' value='' />
+          <option value={"Global"}>Global</option>
           {countries.map((item) => {
             return <option key={item}>{item}</option>;
           })}

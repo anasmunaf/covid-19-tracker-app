@@ -26,7 +26,9 @@ export const GlobalProvider = ({ children }) => {
   let [countryData, setCountryData] = useState(0);
 
   function selectCountry(country) {
-    countryApi(country).then(async (arr) => await setCountryData(arr));
+    if (country !== "Global")
+      countryApi(country).then(async (arr) => await setCountryData(arr));
+    else setCountryData("Global");
   }
 
   useEffect(() => {
@@ -37,14 +39,15 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
-        review: countryData
-          ? {
-              name: countryData,
-              cases: countryData.cases,
-              death: countryData.deaths,
-              recover: countryData.recovered,
-            }
-          : cardsData(global),
+        review:
+          countryData && countryData !== "Global"
+            ? {
+                name: countryData,
+                cases: countryData.cases,
+                death: countryData.deaths,
+                recover: countryData.recovered,
+              }
+            : cardsData(global),
         graph,
         selectCountry,
         countries: global.map((arr) => arr.countries).flat(Infinity),
