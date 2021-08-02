@@ -9,8 +9,12 @@ import NativeSelect from "@material-ui/core/NativeSelect";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: "1% 42%",
-    minWidth: 250,
+    minWidth: "80%",
+    alignItems: "center",
+    marginBottom: "10%",
+  },
+  label: {
+    textAlign: "center",
   },
 }));
 
@@ -24,8 +28,7 @@ const Countries = () => {
 
   return (
     <div>
-      <FormControl className={classes.formControl}>
-        <InputLabel>Countries</InputLabel>
+      <FormControl variant='outlined' fullWidth className={classes.formControl}>
         <NativeSelect onChange={(e) => handleChange(e.target.value)}>
           <option value={"Global"}>Global</option>
           {countries.map((item) => {

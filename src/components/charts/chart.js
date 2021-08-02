@@ -1,9 +1,11 @@
 /** @format */
 
 import React, { useContext } from "react";
-import { Line, Bar } from "react-chartjs-2";
+import { Line, Bar, Doughnut } from "react-chartjs-2";
 import styles from "./chart.module.css";
 import { GlobalContext } from "../../context/globalState";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 const Chart = () => {
   let { graph, review } = useContext(GlobalContext);
@@ -42,34 +44,22 @@ const Chart = () => {
           "rgba(235, 52, 76)",
           "rgba(39, 242, 39)",
         ],
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };
-  const options = {
-    scales: {
-      yAxes: [
-        {
-          stacked: true,
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
-      xAxes: [
-        {
-          stacked: true,
-        },
-      ],
-    },
-  };
   return (
     <div className={styles.chart}>
-      {review.name === "global" ? (
-        <Line data={lineData} />
-      ) : (
-        <Bar data={barData} />
-      )}
+      <Typography variant='h4' gutterBottom>
+        Graphical Representation
+      </Typography>
+      <Box borderTop={0} borderColor='#607d8b'>
+        {review.name === "global" ? (
+          <Line data={lineData} />
+        ) : (
+          <Bar data={barData} />
+        )}
+      </Box>
     </div>
   );
 };

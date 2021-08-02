@@ -1,6 +1,13 @@
 /** @format */
 
+.lineChart {
+  padding: 2%;
+  display: inline;
+}
 .chart {
-  width: 68%;
-  margin: auto 15%;
+  font-weight: bolder;
+  padding: 2%;
+  display: inline;
+  width: 96%;
+  color: #972034ce;
 }
