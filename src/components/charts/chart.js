@@ -55,7 +55,7 @@ const Chart = () => {
       </Typography>
       <Box borderTop={0} borderColor='#607d8b'>
         {review.name === "global" ? (
-          <Line data={lineData} />
+          <Line data={lineData} width={80} height={50} />
         ) : (
           <Bar data={barData} />
         )}

@@ -1,43 +1,35 @@
 /** @format */
 
 import React from "react";
-import { makeStyles, Typography } from "@material-ui/core";
+import { Container, makeStyles, Typography } from "@material-ui/core";
 
 const styles = makeStyles({
-  head: {
+  header: {
     backgroundColor: "#f5f5f5",
+  },
+  title: {
     fontFamily: "Limelight",
-    fontSize: "5rem",
     color: "#e91e63",
-    paddingLeft: "3%",
-    height: "100px",
+    fontSize: "8vh",
+    display: "inline-block",
   },
   subhead: {
     fontFamily: "cursive",
     color: "#006064",
-    fontSize: "2.7rem",
+    display: "inline-block",
+    fontSize: "4vh",
   },
-  // logo: { margin: "auto 30px" },
 });
 
 const Header = () => {
   const classes = styles();
   return (
-    <div>
-      <Typography className={classes.head} gutterBottom>
-        COVID-19
-        <span className={classes.subhead}> Data Research Alliance</span>
-        {/* <Typography variant={"h3"} className={classes.subhead} gutterBottom>
-          Data Research Alliance
-        </Typography> */}
-        {/* <img
-          width='56'
-          height='56'
-          className={classes.logo}
-          src='https://image.flaticon.com/icons/png/512/2659/2659980.png'
-        /> */}
+    <Container className={classes.header} maxWidth='xl'>
+      <Typography className={classes.title}>COVID-19</Typography>
+      <Typography className={classes.subhead}>
+        Data Research Alliance
       </Typography>
-    </div>
+    </Container>
   );
 };
 export default Header;

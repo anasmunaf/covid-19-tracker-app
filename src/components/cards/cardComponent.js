@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   root: (cardColor) => ({
     backgroundColor: "white",
     boxShadow: `2px 2px 2px 2px grey`,
-    width: "500px",
+    // width: "500px",
   }),
   title: (cardColor) => ({
     fontWeight: "bold",
@@ -30,9 +30,12 @@ const useStyles = makeStyles({
   name: (cardColor) => ({
     fontWeight: "bold",
     color: cardColor.color,
+    minHeight: 32,
   }),
   media: {
     height: 200,
+    // // maxHeight: 200,
+    // minHeight: 120,
   },
 });
 const CardComponent = (props) => {

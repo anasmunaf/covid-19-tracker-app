@@ -7,6 +7,7 @@ import Chart from "./components/charts/chart";
 import Countries from "./components/countries/counrties";
 import Header from "./components/header";
 import { GlobalProvider } from "./context/globalState";
+import Container from "@material-ui/core/Container";
 function App() {
   return (
     <GlobalProvider>
@@ -21,7 +22,7 @@ function App() {
           <Grid item>
             <Cards />
           </Grid>
-          <Grid container item>
+          <Grid item>
             <Chart />
           </Grid>
         </Grid>
